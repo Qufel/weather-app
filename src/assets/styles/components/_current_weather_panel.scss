@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.current-weather-container {
+  @include panel();
+
+  flex: 3;
+}

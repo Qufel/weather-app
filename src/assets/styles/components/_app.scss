@@ -1,1 +1,24 @@
 @use "../abstracts" as *;
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+
+  min-height: 100vh;
+
+  padding: space(x-large);
+  gap: space(large);
+
+  background-color: color(black, 800);
+
+  & > .today-weather-container {
+    display: flex;
+    flex-direction: column;
+
+    flex: 2.5;
+
+    width: 100%;
+
+    gap: inherit;
+  }
+}

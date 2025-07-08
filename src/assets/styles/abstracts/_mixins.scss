@@ -1,0 +1,8 @@
+@use "./colors" as *;
+@use "./spacings" as *;
+
+@mixin panel() {
+  background-color: color(black, 600);
+  box-shadow: space(x-small) space(x-small) 0 space(x-small) color(black, 700);
+  border-radius: space(x-large);
+}

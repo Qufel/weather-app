@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.hourly-forecast-container {
+  @include panel();
+
+  flex: 1;
+}

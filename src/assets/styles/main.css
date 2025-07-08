@@ -170,3 +170,43 @@ p,
   font-weight: 400;
   font-size: 1rem;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 1.5rem;
+  background-color: #23252f;
+}
+.app-container > .today-weather-container {
+  display: flex;
+  flex-direction: column;
+  flex: 2.5;
+  width: 100%;
+  gap: inherit;
+}
+
+.current-weather-container {
+  background-color: #333745;
+  box-shadow: 0.25rem 0.25rem 0 0.25rem #2b2f3b;
+  border-radius: 2rem;
+  flex: 3;
+}
+
+.hourly-forecast-container {
+  background-color: #333745;
+  box-shadow: 0.25rem 0.25rem 0 0.25rem #2b2f3b;
+  border-radius: 2rem;
+  flex: 1;
+}
+
+.weekly-forecast-container {
+  background-color: #333745;
+  box-shadow: 0.25rem 0.25rem 0 0.25rem #2b2f3b;
+  border-radius: 2rem;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+}

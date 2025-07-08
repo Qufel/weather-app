@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.weekly-forecast-container {
+  @include panel();
+
+  display: flex;
+
+  flex: 1;
+
+  width: 100%;
+  max-width: 500px;
+}
