@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 *,
 *:before,
 *:after {
@@ -104,4 +105,68 @@ table {
 input {
   -webkit-appearance: none;
   border-radius: 0;
+}
+
+.fs-small {
+  font-size: 0.875rem;
+}
+
+.fs-medium {
+  font-size: 1rem;
+}
+
+.fs-large {
+  font-size: 1.25rem;
+}
+
+.fs-x-large {
+  font-size: 1.5rem;
+}
+
+.fs-xx-large {
+  font-size: 2rem;
+}
+
+.fs-xxx-large {
+  font-size: 2.5rem;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+.h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+h4,
+.h4 {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+h5,
+.h5 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+p,
+.p {
+  font-weight: 400;
+  font-size: 1rem;
 }

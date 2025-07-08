@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+$font-sizes: (
+  small: 0.875rem,
+  medium: 1rem,
+  large: 1.25rem,
+  x-large: 1.5rem,
+  xx-large: 2rem,
+  xxx-large: 2.5rem,
+);
+
+$font-weights: (
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+);
+
+@function font-weight($weight: regular) {
+  @return map-get($font-weights, $weight);
+}
+
+@function font-size($size) {
+  @return map-get($font-sizes, $size);
+}
+
+@each $size, $value in $font-sizes {
+  .fs-#{$size} {
+    font-size: $value;
+  }
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+.h1 {
+  font-weight: font-weight(bold);
+  font-size: font-size(xxx-large);
+}
+
+h2,
+.h2 {
+  font-weight: font-weight(bold);
+  font-size: font-size(xx-large);
+}
+
+h3,
+.h3 {
+  font-weight: font-weight(semi-bold);
+  font-size: font-size(x-large);
+}
+
+h4,
+.h4 {
+  font-weight: font-weight(semi-bold);
+  font-size: font-size(large);
+}
+
+h5,
+.h5 {
+  font-weight: font-weight(semi-bold);
+  font-size: font-size(medium);
+}
+
+p,
+.p {
+  font-weight: font-weight(regular);
+  font-size: font-size(medium);
+}
