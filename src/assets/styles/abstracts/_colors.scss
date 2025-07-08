@@ -1,0 +1,27 @@
+$colors: (
+  black: (
+    800: #23252f,
+    700: #2b2f3b,
+    600: #333745,
+    400: #454b5e,
+    200: #7e85a0,
+  ),
+  white: (
+    600: #aed7f6,
+    400: #cce6f9,
+    200: #e6f3fc,
+    100: #f5fbff,
+  ),
+  aqi: (
+    good: #28f4e8,
+    fair: #22d877,
+    moderate: #f0e641,
+    poor: #ff5050,
+    very-poor: #960032,
+    extremely-poor: #7d2181,
+  ),
+);
+
+@function color($color, $shade) {
+  @return map-get(map-get($colors, $color), $shade);
+}
