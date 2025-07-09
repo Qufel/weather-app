@@ -1,11 +1,11 @@
-import WeatherIcon from "./WeatherIcon";
+import LocationBar from "./LocationBar";
 
 interface Props {}
 
 function CurrentWeatherPanel(props: Props) {
   return (
     <div className="current-weather-container">
-      <WeatherIcon code={1} isDay={true} width={200} height={200} />
+      <LocationBar />
     </div>
   );
 }

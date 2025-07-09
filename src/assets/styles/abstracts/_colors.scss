@@ -25,3 +25,11 @@ $colors: (
 @function color($color, $shade) {
   @return map-get(map-get($colors, $color), $shade);
 }
+
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    .color-#{$color}-#{$shade} {
+      color: $value;
+    }
+  }
+}

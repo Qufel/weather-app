@@ -14,7 +14,7 @@ interface Props {
   height?: number;
 }
 
-function WeatherIcon({ code, isDay, width = 24, height = 24 }: Props) {
+function WeatherIcon({ code, isDay, width = 32, height = 32 }: Props) {
   switch (code) {
     case 0:
       return isDay ? (

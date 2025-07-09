@@ -209,4 +209,12 @@ p,
   flex: 1;
   width: 100%;
   max-width: 500px;
+}
+
+.location-bar-display {
+  display: flex;
+  flex-direction: row;
+  fill: 1;
+  align-items: center;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

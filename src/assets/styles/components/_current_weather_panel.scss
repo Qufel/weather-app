@@ -3,5 +3,11 @@
 .current-weather-container {
   @include panel();
 
+  display: flex;
+  flex-direction: column;
+
+  padding: space(large);
+  gap: space(medium);
+
   flex: 3;
 }
