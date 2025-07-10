@@ -1,4 +1,4 @@
-import LocationBar from "./LocationBar";
+import LocationBar from "../LocationBar";
 
 interface Props {}
 
