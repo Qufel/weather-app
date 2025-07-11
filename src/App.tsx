@@ -1,7 +1,5 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 import CurrentWeatherPanel from "./components/panels/CurrentWeatherPanel";
 import HourlyForecastPanel from "./components/panels/HourlyForecastPanel";
 import WeeklyForecastPanel from "./components/panels/WeeklyForecastPanel";

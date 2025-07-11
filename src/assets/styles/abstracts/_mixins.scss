@@ -1,8 +1,24 @@
 @use "./colors" as *;
 @use "./spacings" as *;
+@use "../base/typography" as *;
 
 @mixin panel() {
-  background-color: color(black, 600);
-  box-shadow: space(x-small) space(x-small) 0 space(x-small) color(black, 700);
-  border-radius: space(x-large);
+  background-color: color(natural, 800);
+  border-radius: space(small);
+}
+
+@mixin scroll($element, $direction) {
+  #{$element} {
+    &::-webkit-scrollbar {
+      @if $direction == vertical {
+        width: 16px;
+      }
+      @if $direction == horizontal {
+        height: 16px;
+      }
+    }
+    &::-webkit-scrollbar-track {
+      background: red;
+    }
+  }
 }

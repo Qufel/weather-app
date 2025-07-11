@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.search-item {
+  display: flex;
+  align-items: center;
+
+  padding-block: space(x-small);
+  padding-inline: space(small);
+  border-radius: space(small);
+
+  border: 1px solid transparent;
+
+  gap: space(small);
+
+  --icon-color: #{color(natural, 100)};
+
+  & > .city {
+    color: color(natural, 100);
+  }
+
+  & > .info {
+    color: color(natural, 400);
+  }
+
+  &:hover {
+    background-color: color(natural, 800);
+    border: 1px solid color(natural, 700);
+  }
+}

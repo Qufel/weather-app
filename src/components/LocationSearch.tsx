@@ -4,9 +4,9 @@ import { type Location } from "./LocationBar";
 import { getLocations } from "../DataFetch";
 
 import SearchItem from "./SearchItem";
-
-import search from "../assets/icons/search.svg";
 import { useQuery } from "@tanstack/react-query";
+
+import { LocationIcon, SearchIcon } from "./Icons";
 
 interface Props {
   handleSetLocation: (location: any) => void;
@@ -29,37 +29,40 @@ function LocationSearch({ handleSetLocation }: Props) {
   return (
     <div className="location-search">
       <div className="search-bar">
-        <img className="icon" src={search} alt="Search" />
         <input
           type="text"
+          className="search-input"
           name="search-input"
           id="search-input"
-          placeholder="Search"
+          placeholder="Search for a location..."
           onChange={(e) => setText(e.target.value)}
           value={text}
         />
         <button
+          className="search-button"
           onClick={() => {
             setText(text);
             refetch();
           }}
         >
-          Search
+          <SearchIcon />
         </button>
       </div>
-      <ul className="search-results">
-        {isLoading && <li>Loading...</li>}
-        {locations &&
-          locations.map((location: any, index: number) => (
-            <SearchItem
-              key={index}
-              location={location}
-              handleSelect={() => {
-                handleSetLocation(location);
-              }}
-            />
-          ))}
-      </ul>
+      {(locations !== undefined || isLoading) && (
+        <ul className="search-results">
+          {isLoading && <li>Loading...</li>}
+          {locations &&
+            locations.map((location: any, index: number) => (
+              <SearchItem
+                index={index}
+                location={location}
+                handleSelect={() => {
+                  handleSetLocation(location);
+                }}
+              />
+            ))}
+        </ul>
+      )}
     </div>
   );
 }

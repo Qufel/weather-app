@@ -5,7 +5,6 @@ export const getData = async (latitude: number, longitude: number) => {
 };
 
 export const getLocations = async (query: string) => {
-  await new Promise((f) => setTimeout(f, 1000));
   return fetch(
     `https://nominatim.openstreetmap.org/search?q=${query}&format=json&polygon_kml=0&addressdetails=1&featureType=city`
   ).then((res) => res.json());

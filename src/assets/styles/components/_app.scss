@@ -6,10 +6,10 @@
 
   min-height: 100vh;
 
-  padding: space(x-large);
-  gap: space(large);
+  padding: space(medium);
+  gap: space(medium);
 
-  background-color: color(black, 800);
+  background-color: color(natural, 900);
 
   & > .today-weather-container {
     display: flex;

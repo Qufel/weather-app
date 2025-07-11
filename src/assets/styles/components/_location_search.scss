@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+.location-search {
+  min-width: 20rem;
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+
+    min-width: inherit;
+    max-width: 20rem;
+
+    --icon-color: #{color(natural, 100)};
+
+    background-color: color(natural, 900);
+    border-radius: space(small);
+
+    padding-inline: space(medium);
+    padding-block: space(small);
+
+    display: flex;
+    gap: space(medium);
+
+    & > .search-input {
+      flex: 1;
+
+      color: color(natural, 100);
+
+      background: transparent;
+      border: none;
+      outline: none;
+
+      :focus {
+        border: none;
+        outline: none;
+      }
+
+      &::placeholder {
+        color: color(natural, 500);
+      }
+    }
+
+    & > .search-button {
+      display: inline-flex;
+      align-items: center;
+
+      padding-inline: space(small);
+      padding-block: space(small);
+
+      gap: space(small);
+
+      background-color: transparent;
+      border: 1px solid color(natural, 700);
+      color: color(natural, 100);
+
+      border-radius: space(small);
+
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: mix(color(natural, 600), transparent, 20%);
+        color: color(natural, 400);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .search-results {
+    position: relative;
+
+    margin-top: space(medium);
+
+    background-color: color(natural, 900);
+    border-radius: space(small);
+
+    width: fit-content;
+
+    padding-inline: space(medium);
+    padding-block: space(medium);
+
+    display: flex;
+    flex-direction: column;
+    gap: space(medium);
+
+    overflow-y: auto;
+  }
+}

@@ -1,18 +1,26 @@
-import pin from "../assets/icons/pin.svg";
 import { type Location } from "./LocationBar";
+import { LocationIcon } from "./Icons";
 
 interface Props {
-  key: number;
+  index: number;
   location: any;
   handleSelect: () => void;
 }
 
-function SearchItem({ key, location, handleSelect }: Props) {
+function SearchItem({ index, location, handleSelect }: Props) {
   return (
-    <li key={key} className="search-item" onClick={handleSelect}>
-      <img className="icon" src={pin} alt="Location Pin" />
-      <p>
-        <span>{location["display_name"]}</span>
+    <li key={index} className="search-item" onClick={handleSelect}>
+      <LocationIcon />
+      <p className="city">
+        {location["address"]["city"] ||
+          location["address"]["town"] ||
+          location["address"]["village"]}
+      </p>
+      <p className="info">
+        {location["address"]["state"] ||
+          location["address"]["province"] ||
+          location["address"]["state_district"]}
+        , {location["address"]["country"]}
       </p>
     </li>
   );
