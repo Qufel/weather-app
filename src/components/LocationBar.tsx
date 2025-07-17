@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 
 import LocationSearch from "./LocationSearch";
+import LocationDisplay from "./LocationDisplay";
 
 export interface Location {
   name: string;
@@ -13,16 +15,26 @@ export interface Location {
 interface Props {}
 
 function LocationBar() {
-  const [location, setLocation] = useState<any | null>(null);
+  const [cookies, setCookies] = useCookies(["location"]);
+  const [location, setLocation] = useState<any>(cookies["location"]);
+  const [showSearch, setShowSearch] = useState<boolean>(false);
+
+  const handleLocationChange = (location: any) => {
+    setLocation(location);
+    setShowSearch(false);
+    setCookies("location", location, { path: "/" });
+  };
 
   return (
     <div className="location-bar">
-      <LocationSearch
-        handleSetLocation={(location: any) => {
-          setLocation(location);
-          console.log("Selected location:", location);
-        }}
-      />
+      {!showSearch ? (
+        <LocationDisplay
+          location={location}
+          handleLocationChange={() => setShowSearch(true)}
+        />
+      ) : (
+        <LocationSearch handleSetLocation={handleLocationChange} />
+      )}
     </div>
   );
 }

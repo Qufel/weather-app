@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+@use "../base/typography" as *;
+
+.location-display {
+  display: flex;
+  align-items: center;
+
+  gap: space(small);
+
+  .address {
+    display: flex;
+    flex-direction: column;
+
+    gap: space(xx-small);
+
+    .city {
+      color: color(natural, 100);
+    }
+
+    .info {
+      color: color(natural, 300);
+      font-size: font-size(small);
+    }
+  }
+
+  .change-location-btn {
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1/1;
+
+    background: transparent;
+    border: none;
+    --icon-color: #{color(natural, 100)};
+
+    border-radius: space(small);
+
+    &:hover {
+      background: color(natural, 700);
+      border: 1px solid color(natural, 600);
+    }
+  }
+}

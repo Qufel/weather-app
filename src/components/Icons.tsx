@@ -1,10 +1,15 @@
 // @ts-ignore
 
-export function SearchIcon() {
+interface Props {
+  width?: number;
+  height?: number;
+}
+
+export function SearchIcon({ width = 24, height = 24 }: Props) {
   return (
     <svg
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       className="icon"
       viewBox="0 0 24 24"
       fill="none"
@@ -28,11 +33,11 @@ export function SearchIcon() {
   );
 }
 
-export function LocationIcon() {
+export function LocationIcon({ width = 24, height = 24 }: Props) {
   return (
     <svg
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       className="icon"
       viewBox="0 0 24 24"
       fill="none"
