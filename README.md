@@ -1,5 +1,5 @@
 # Weather App ⛅ 
-Simple application to display current weather and weather forecast written in TypeScript with React. It uses [Open-Meteo API](https://open-meteo.com/) to get data about weather in your area.
+Simple application to display current weather and weather forecast written in TypeScript with React. It uses [Open-Meteo API](https://open-meteo.com/) to get data about weather in your area and [Nominatim](https://nominatim.org/) for location search.
 
 ## Installation 💻
 **Requirements**
