@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useQuery } from "@tanstack/react-query";
-import { getWeather } from "./DataFetch";
+import { getWeatherAtCurrentTime, getWeather } from "./DataFetch";
 
 import CurrentWeatherPanel from "./components/panels/CurrentWeatherPanel";
 import HourlyForecastPanel from "./components/panels/HourlyForecastPanel";
@@ -17,6 +17,7 @@ function App() {
   const [longitude, setLongitude] = useState<number>(
     cookies["location"]["lon"] || -0.118092
   );
+  // Defaults to London
 
   const {
     data: weather,
@@ -36,21 +37,22 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <>
       {!isLoading ? (
-        <>
+        <div className="app-container">
           <div className="today-weather-container">
             <CurrentWeatherPanel
+              weatherData={getWeatherAtCurrentTime(weather)}
               handleWeatherDataChange={handleWeatherDataChange}
             />
             <HourlyForecastPanel />
           </div>
           <WeeklyForecastPanel />
-        </>
+        </div>
       ) : (
-        <p>Loading...</p>
+        <p>Loading...</p> // DIsplay loading panel
       )}
-    </div>
+    </>
   );
 }
 
