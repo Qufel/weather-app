@@ -1,11 +1,13 @@
 import LocationBar from "../LocationBar";
 
-interface Props {}
+interface Props {
+  handleWeatherDataChange: (latitude: number, longitude: number) => void;
+}
 
-function CurrentWeatherPanel(props: Props) {
+function CurrentWeatherPanel({ handleWeatherDataChange }: Props) {
   return (
     <div className="current-weather-container">
-      <LocationBar />
+      <LocationBar handleWeatherDataUpdate={handleWeatherDataChange} />
     </div>
   );
 }

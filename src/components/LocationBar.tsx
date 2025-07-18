@@ -12,28 +12,39 @@ export interface Location {
   longitude: number;
 }
 
-interface Props {}
+interface Props {
+  handleWeatherDataUpdate: (latitude: number, longitude: number) => void;
+}
 
-function LocationBar() {
+function LocationBar({ handleWeatherDataUpdate }: Props) {
   const [cookies, setCookies] = useCookies(["location"]);
-  const [location, setLocation] = useState<any>(cookies["location"]);
+  const [location, setLocation] = useState<any>(cookies["location"] || null);
   const [showSearch, setShowSearch] = useState<boolean>(false);
 
-  const handleLocationChange = (location: any) => {
+  const handleSetLocation = (location: any) => {
+    // Update location and weather data
+    const { lat, lon } = location;
     setLocation(location);
+    handleWeatherDataUpdate(parseFloat(lat), parseFloat(lon));
+
+    // Hide search bar
     setShowSearch(false);
-    setCookies("location", location, { path: "/" });
+
+    // Set location cookie
+    const expiryDate: Date = new Date(Date.now());
+    expiryDate.setTime(expiryDate.getTime() + 365 * 24 * 60 * 60 * 1000);
+    setCookies("location", location, { path: "/", expires: expiryDate });
   };
 
   return (
     <div className="location-bar">
-      {!showSearch ? (
+      {!showSearch && location !== null ? (
         <LocationDisplay
           location={location}
           handleLocationChange={() => setShowSearch(true)}
         />
       ) : (
-        <LocationSearch handleSetLocation={handleLocationChange} />
+        <LocationSearch handleSetLocation={handleSetLocation} />
       )}
     </div>
   );
