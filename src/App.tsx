@@ -39,9 +39,9 @@ function App() {
   };
 
   return (
-    <>
+    <div className="app-container">
       {!isLoading ? (
-        <div className="app-container">
+        <>
           <div className="today-weather-container">
             <CurrentWeatherPanel
               weatherData={getWeatherAtCurrentTime(weather)}
@@ -50,12 +50,11 @@ function App() {
             <HourlyForecastPanel />
           </div>
           <WeeklyForecastPanel />
-        </div>
+        </>
       ) : (
         <LoadingPanel /> // DIsplay loading panel
       )}
-    </>
+    </div>
   );
 }
-
 export default App;

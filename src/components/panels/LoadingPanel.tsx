@@ -1,8 +1,8 @@
 function LoadingPanel() {
   return (
-    <>
-      <p>Loading...</p>
-    </>
+    <div className="loading-panel">
+      <div className="loader"></div>
+    </div>
   );
 }
 

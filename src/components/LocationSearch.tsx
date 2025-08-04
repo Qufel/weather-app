@@ -7,6 +7,7 @@ import SearchItem from "./SearchItem";
 import { useQuery } from "@tanstack/react-query";
 
 import { LocationIcon, SearchIcon } from "./Icons";
+import LoadingPanel from "./panels/LoadingPanel";
 
 interface Props {
   handleSetLocation: (location: any) => void;
@@ -50,7 +51,7 @@ function LocationSearch({ handleSetLocation }: Props) {
       </div>
       {(locations !== undefined || isLoading) && (
         <ul className="search-results">
-          {isLoading && <li>Loading...</li>}
+          {isLoading && <LoadingPanel />}
           {locations &&
             locations.map((location: any, index: number) => (
               <SearchItem
