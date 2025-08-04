@@ -8,15 +8,17 @@ import { getWeatherAtCurrentTime, getWeather } from "./DataFetch";
 import CurrentWeatherPanel from "./components/panels/CurrentWeatherPanel";
 import HourlyForecastPanel from "./components/panels/HourlyForecastPanel";
 import WeeklyForecastPanel from "./components/panels/WeeklyForecastPanel";
+import LoadingPanel from "./components/panels/LoadingPanel";
 
 function App() {
   const [cookies, setCookies] = useCookies();
-  const [latitude, setLatitude] = useState<number>(
-    cookies["location"]["lat"] || 51.509865
-  );
-  const [longitude, setLongitude] = useState<number>(
-    cookies["location"]["lon"] || -0.118092
-  );
+
+  // Extract location, latitude and longitude from cookies
+  var { location = {} } = cookies;
+  var { lat = null, lon = null } = location;
+
+  const [latitude, setLatitude] = useState<number>(lat || 51.509865);
+  const [longitude, setLongitude] = useState<number>(lon || -0.118092);
   // Defaults to London
 
   const {
@@ -50,7 +52,7 @@ function App() {
           <WeeklyForecastPanel />
         </div>
       ) : (
-        <p>Loading...</p> // DIsplay loading panel
+        <LoadingPanel /> // DIsplay loading panel
       )}
     </>
   );
