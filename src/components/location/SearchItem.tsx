@@ -1,5 +1,4 @@
-import { type Location } from "./LocationBar";
-import { LocationIcon } from "./Icons";
+import { LocationIcon } from "../Icons";
 
 interface Props {
   index: number;

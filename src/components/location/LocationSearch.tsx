@@ -1,13 +1,13 @@
 import React, { use, useEffect, useState } from "react";
 import { type Location } from "./LocationBar";
 
-import { getLocations } from "../DataFetch";
+import { getLocations } from "../../DataFetch";
 
 import SearchItem from "./SearchItem";
 import { useQuery } from "@tanstack/react-query";
 
-import { LocationIcon, SearchIcon } from "./Icons";
-import LoadingPanel from "./panels/LoadingPanel";
+import { LocationIcon, SearchIcon } from "../Icons";
+import LoadingPanel from "../panels/LoadingPanel";
 
 interface Props {
   handleSetLocation: (location: any) => void;

@@ -1,4 +1,4 @@
-import LocationBar from "../LocationBar";
+import LocationBar from "../location/LocationBar";
 
 interface Props {
   weatherData: {};
