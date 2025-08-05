@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.time-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  gap: space(medium);
+
+  padding-inline: space(small);
+
+  color: color(natural, 300);
+
+  &-now {
+    display: flex;
+    flex-direction: column;
+    gap: space(small);
+  }
+
+  &-set-rise {
+    display: flex;
+    flex-direction: column;
+    gap: space(small);
+  }
+}

@@ -1,0 +1,8 @@
+@use "../abstracts" as *;
+
+.vertical-line {
+  width: 4px;
+  background-color: color(natural, 100);
+  min-height: 100%;
+  border-radius: 2px;
+}
